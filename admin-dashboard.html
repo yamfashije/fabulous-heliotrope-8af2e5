@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - Hospital AI</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="doctors.html">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-hospital"></i>
+            <span>Hospital AI</span>
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+    <a href="doctors.html">
+        <i class="fa-solid fa-user-doctor"></i>
+        Doctors
+    </a>
+</li>
+
+<li>
+    <a href="patients.html">
+        <i class="fa-solid fa-users"></i>
+        Patients
+    </a>
+</li>
+
+<li>
+    <a href="appointments.html">
+        <i class="fa-solid fa-calendar-check"></i>
+        Appointments
+    </a>
+</li>
+
+<li>
+    <a href="laboratory.html">
+        <i class="fa-solid fa-flask"></i>
+        Laboratory
+    </a>
+</li>
+
+<li>
+    <a href="pharmacy.html">
+        <i class="fa-solid fa-pills"></i>
+        Pharmacy
+    </a>
+</li>
+
+<li>
+    <a href="billing.html">
+        <i class="fa-solid fa-money-bill"></i>
+        Billing
+    </a>
+</li>
+
+<li>
+    <a href="settings.html">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+    </a>
+</li>
+
+            <li>
+            
+    <a href="doctors.html">
+        <i class="fa-solid fa-user-doctor"></i>
+        Doctors
+    </a>
+
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-users"></i>
+                    Patients
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Appointments
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-flask"></i>
+                    Laboratory
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-pills"></i>
+                    Pharmacy
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-money-bill"></i>
+                    Billing
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+            <li class="logout">
+                <a href="#" onclick="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h2>Admin Dashboard</h2>
+                <p>Hospital Management System</p>
+            </div>
+
+            <div class="profile">
+
+                <i class="fa-solid fa-bell notification"></i>
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrator</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME -->
+        <section class="welcome">
+
+            <div>
+                <h1>Welcome, Admin 👋</h1>
+
+                <p>
+                    Manage hospital operations from your dashboard.
+                </p>
+            </div>
+
+            <button class="primary-btn">
+                <i class="fa-solid fa-plus"></i>
+                Add Doctor
+            </button>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <p>Total Patients</p>
+                    <h2>2,548</h2>
+                    <span class="positive">+12.5%</span>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+
+                <div>
+                    <p>Total Doctors</p>
+                    <h2>86</h2>
+                    <span class="positive">+4.2%</span>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <div>
+                    <p>Appointments</p>
+                    <h2>324</h2>
+                    <span class="positive">+8.4%</span>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                </div>
+
+                <div>
+                    <p>Revenue</p>
+                    <h2>$48,250</h2>
+                    <span class="positive">+15.8%</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+        <section class="dashboard-grid">
+
+            <!-- RECENT PATIENTS -->
+            <div class="dashboard-card">
+
+                <div class="card-header">
+                    <h3>Recent Patients</h3>
+
+                    <button class="view-btn">
+                        View All
+                    </button>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>John Smith</td>
+                            <td>32</td>
+                            <td>Male</td>
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Jane</td>
+                            <td>27</td>
+                            <td>Female</td>
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>David Lee</td>
+                            <td>45</td>
+                            <td>Male</td>
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- APPOINTMENTS -->
+            <div class="dashboard-card">
+
+                <div class="card-header">
+                    <h3>Today's Appointments</h3>
+
+                    <button class="view-btn">
+                        View All
+                    </button>
+                </div>
+
+                <div class="appointment">
+
+                    <div class="appointment-icon">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+
+                    <div>
+                        <strong>Dr. John Doe</strong>
+                        <p>10:00 AM - Patient Checkup</p>
+                    </div>
+
+                </div>
+
+
+                <div class="appointment">
+
+                    <div class="appointment-icon">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+
+                    <div>
+                        <strong>Dr. Sarah</strong>
+                        <p>11:30 AM - Consultation</p>
+                    </div>
+
+                </div>
+
+
+                <div class="appointment">
+
+                    <div class="appointment-icon">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+
+                    <div>
+                        <strong>Dr. Michael</strong>
+                        <p>02:00 PM - Follow-up</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                © 2026 Hospital AI System. All Rights Reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
